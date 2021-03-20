@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     
+       <!-- Bootstrap CSS -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+     
+        <title>Last Answers</title>
+    </head>
+
+    <body class="body">
+
+    <div class="main text-center"">
+      <br>
+      <br>
+      <h3>Last Answer</h1
+      <br>
+      <br>
+      <br>
+    <img src="https://t-kyohei.github.io/juyu/img/face_smile_man2.png"  class="w-25" id="man" alt="face">
+    <img src="https://t-kyohei.github.io/juyu/img/face_smile_woman2.png"  class="w-25" id="woman" alt="face">
+      <br>
+
+
+        <br>
+        <input type="text" class="" id="code" sytle="width:200px;">
+         <br>
+         <br>
+        <p class="d-none" id="fail">それは違うようだ</p>
+       <br>
+       <br>
+      <button id="submit" role="button" class="btn btn-primary">送信</button>
+       <br>
+       <br>
+      <a href="https://sites.google.com/view/true-ending/%E3%83%9B%E3%83%BC%E3%83%A0" role="button" class="btn btn-primary d-none" id="linkt" ></a>
+      <a href="https://sites.google.com/view/first-wedding/%E3%83%9B%E3%83%BC%E3%83%A0" role="button" class="btn btn-primary d-none" id="linkf" ></a>
+       <br> 
+       <br> 
+
+  </div>
+    </body>
+    
+    <foot>
+    
+    
+       <!-- js読み込み -->   
+      <script>
+
+document.getElementById("man").onclick = function(){
+    var man = document.getElementById("man");
+    if(man.alt == "face"){
+       man.src = "https://t-kyohei.github.io/juyu/img/face_smile_man4.png";
+       man.alt = "smile";
+    }else{
+       man.src = "https://t-kyohei.github.io/juyu/img/face_smile_man2.png";
+       man.alt = "face";
+    
+    }
+
+}
+
+document.getElementById("woman").onclick = function(){
+    var woman = document.getElementById("woman");
+    if(woman.alt== "face"){
+       woman.src = "https://t-kyohei.github.io/juyu/img/face_smile_woman4.png";
+       woman.alt = "smile";
+    }else{
+       woman.src = "https://t-kyohei.github.io/juyu/img/face_smile_woman2.png";
+       woman.alt = "face";
+    
+    }
+
+}
+
+
+document.getElementById("submit").onclick = function(){
+var text = document.getElementById("code").value;
+var man = document.getElementById("man");
+var woman = document.getElementById("woman");
+	if(text =="ちかいのキス" && man.alt=="smile" && woman.alt=="smile"){	
+		document.getElementById("fail").classList.add("d-none"); 
+        document.getElementById("linkt").click();
+	}else if(text =="ちかいのキス" ){
+	    document.getElementById("fail").classList.add("d-none"); 
+        document.getElementById("linkf").click();
+	}else{
+	    document.getElementById("fail").classList.remove("d-none");
+     }
+
+
+}
+      </script>
+      
+    </foot>
+</html>

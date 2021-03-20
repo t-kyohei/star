@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <!-- A-Frame ライブラリの読み込み -->
+        <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+
+        <!-- AR.js ライブラリの読み込み -->
+        <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/2.2.0/aframe/build/aframe-ar.js"></script>
+
+        <title>WebAR</title>
+    </head>
+
+      <body style='margin : 0px; overflow: hidden; font-family: Monospace; transform-origin:55% 50%;transform:scale(-1,1) rotate(180deg); '>
+
+
+        <!-- ARオブジェクトを描画するシーンの定義 -->
+        <a-scene stats embedded arjs='debugUIEnabled: false; sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 240; canvasHeight: 180'>
+         <!-- 3Dオブジェクトの読み込み -->
+        <!-- OBJファイルはモデル形状、MTLファイルはテクスチャ情報 -->
+        <!-- ここで指定したIDを呼び出し時に使う -->
+        <!-- <a-assets>
+            <a-asset-item id="signpanel_mtl" src="obj/12221_Cat_v1_l3.mtl"></a-asset-item>
+            <a-asset-item id="signpanel_obj" src="obj/12221_Cat_v1_l3.obj"></a-asset-item>
+        </a-assets>-->
+                   <!--ケーキ -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-cuicle.patt">
+            
+                   <a-entity 
+                      obj-model="obj: url(../obj/patrick.obj);
+                  mtl: url(../obj/patrick.mtl)"
+                      scale="0.02 0.02 0.02"
+                      rotation="90 0 0"
+                  >
+                  </a-entity>
+
+                <!-- テキストも描画可能 -->
+                <a-text value="wedding" position="0 0.8 0" align="center"></a-text>
+            </a-marker>
+            
+            
+            <!-- 猫 -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-cross.patt">
+               <a-entity obj-model="obj: url(../obj/12221_Cat_v1_l3.obj);" scale="0.02 0.02 0.02" rotation="-90 0 0">
+               </a-entity>
+
+                <!-- テキストも描画可能 -->
+                <a-text value="Cat AR by J" position="0 0.8 0" align="center"></a-text>
+                <a-text value="Augmented" position="0 0.8 0" rotation="0 0 0" scale="1.5 1.5 1.5" color="#111111"></a-text>
+                <a-text value="Reality" position="0 0.8 0" rotation="0 0 0" scale="1.5 1.5 1.5" color="#111111"></a-text>
+            </a-marker>
+           
+           
+            <!--Oの上にH -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-O.patt">
+             <a-entity obj-model="obj: url(../obj/H.obj);mtl: url(../obj/H.mtl)" scale="0.1 0.1 0.1" rotation="0 0 0" position="0 0.8 0">
+               </a-entity>
+           </a-marker>
+    
+            <!-- Eの上にM -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-E.patt">
+             <a-entity obj-model="obj: url(../obj/M.obj);mtl: url(../obj/M.mtl)" scale="0.1 0.1 0.1" rotation="0 0 0" position="0 0.8 0">
+               </a-entity>
+            </a-marker>
+
+
+            <!-- Wの上に女性 -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-w.patt">
+           <a-entity obj-model="obj: url(../obj/091_W_Aya_10K.obj);mtl: url(../obj/091_W_Aya_10K.mtl)" scale="0.001 0.001 0.001" rotation="-90 0 180" position="0 0 0">  </a-entity>
+           <a-entity obj-model="obj: url(../obj/patrick.obj);mtl: url(../obj/patrick.mtl)" scale="0.025 0.025 0.025" rotation="0 180 0" position="-0.4 0 0.8"></a-entity>
+           <a-entity obj-model="obj: url(../obj/6952.obj);mtl: url(../obj/6952.mtl)" scale="0.05 0.05 0.05" rotation="90 0 0" position="0 2 0"></a-entity>
+                  <!-- <a-text value="mantani wakana" position="0 0.8 0" rotation="0 0 0" scale="1.5 1.5 1.5" color="#111111"></a-text>-->
+            </a-marker>
+            
+            <!-- Sの上にキューブ -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-S.patt">
+                <a-entity obj-model="obj: url(../obj/cube.obj);mtl: url(../obj/cube.mtl)" scale="0.1 0.1 0.1" rotation="0 0 0" position="0 0.8 0"></a-entity>
+            </a-marker>
+           
+
+            <!-- メールの上にタテ14 -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-mail.patt">
+                <a-entity obj-model="obj: url(../obj/yoko14.obj);mtl: url(../obj/yoko14.mtl)" scale="0.1 0.1 0.1" rotation="0 0 0" position="0 0.8 0"></a-entity>
+            </a-marker>
+            
+
+			<!-- 井上 -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-a.patt">
+                <a-entity obj-model="obj: url(../obj/inoue.obj);mtl: url(../obj/inoue.mtl)" scale="0.1 0.1 0.1" rotation="0 0 0" position="0 0.8 0"></a-entity>
+            </a-marker>
+            
+            
+            <!-- 木下 -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-ku.patt">
+                <a-entity obj-model="obj: url(../obj/kinoshita.obj);mtl: url(../obj/kinoshita.mtl)" scale="0.1 0.1 0.1" rotation="0 0 0" position="0 0.8 0"></a-entity>
+            </a-marker>
+                   
+                        
+            <!-- Nエラー -->
+            <a-marker preset="custom" type="pattern" url="../img/pattern-N.patt">
+                <a-entity obj-model="obj: url(../obj/error.obj);mtl: url(../obj/error.mtl)" scale="0.1 0.1 0.1" rotation="0 0 0" position="0 0.8 0"></a-entity>
+            </a-marker>
+
+
+            <!-- カメラオブジェクトの配置 -->
+            <!-- <a-camera-static/>-->
+            
+            <a-entity camera></a-entity>
+            
+        </a-scene>
+    </body>
+</html>
